@@ -492,22 +492,14 @@
     scene.add(ambientLight);
 
     const orbitControls = new OrbitControls(camera, renderer.domElement);
-    orbitControls.enableZoom = true;
-    orbitControls.minDistance = 1;
-    orbitControls.maxDistance = 200;
-    orbitControls.screenSpacePanning = true;
-    orbitControls.enableDamping = false;
-    orbitControls.dampingFactor = 1;
+  
 
     function render() {
         requestAnimationFrame(render);
-        orbitControls.update();
+        
+        
 
-        camera.position.x += (targetX * 5 - camera.position.x) * 0.05;
-        camera.position.y += (targetY * 5 - camera.position.y) * 0.05;
-        camera.lookAt(scene.position);
-
-        camera.updateMatrixWorld();
+      
         stereo.update(camera);
 
         renderer.setScissorTest(true);
